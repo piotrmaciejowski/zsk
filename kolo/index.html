@@ -6,15 +6,31 @@
 	<link rel="stylesheet" href="styl.css">
 </head>
 <body>
-	<div id="box">
+	<div id="left">
 		<form>
-			<input type="number" value="" id="promien">
-			<input type="number" value="" id="wysokosc">
-			<input type="radio" name="typ" id="obwod">
-			<input type="radio" name="typ" id="pole">
-			<input type="radio" name="typ" id="objetosc">
+            <h1>Dane:</h1>
+            Promień
+            <br>
+			<input type="number" value="" id="promien"> cm
+			<br>
+            Wysokość
+            <br>
+            <input type="number" value="" id="wysokosc"> cm
+            <br><br>
+            <h1>Oblicz:</h1>
+			<input type="radio" name="typ" id="obwod">Obwód<br>
+			<input type="radio" name="typ" id="pole">Pole<br>
+			<input type="radio" name="typ" id="objetosc">Objętość<br>
 		</form>
-	</div>
+    <br>
+    <button onclick="oblicz()">Oblicz</button>
+    </div>
+
+    <div id="right">
+        <h1 id="naglowek">Wynik</h1>
+        <h2 id="wyniki">...</h2>
+    </div>
+
     <script src="skrypt.js"></script>
 </body>
 </html>
