@@ -4,7 +4,7 @@ function oblicz(promien, wysokosc){
     var h = document.getElementById('wysokosc').value;
 
     var Obw = 2 * Math.PI * r;
-    var Pol = Math.PI * r * r;
+    var Pol = Math.PI * Math.pow(r, 2);
     var Obj = Pol * h / 3;
 
     var wynik = [Obw, Pol, Obj];
