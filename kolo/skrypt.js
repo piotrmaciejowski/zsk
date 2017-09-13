@@ -26,7 +26,3 @@ function oblicz(promien, wysokosc){
 
     return wynik;
 }
-
-
-
-//test
