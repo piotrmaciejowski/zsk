@@ -19,13 +19,16 @@ function oblicz(r, h){
     //Wyświetlanie obliczeń
     if (elObwod.checked == true) {
         document.getElementById('wyniki').innerHTML = Obw.toFixed(4) + ' cm' + '2'.sup();
-        document.getElementById('naglowek').innerHTML = 'Obwód:'
+        document.getElementById('naglowek').innerHTML = 'Obwód:';
     } else if (elPole.checked == true) {
             document.getElementById('wyniki').innerHTML = Pol.toFixed(4) + ' cm' + '2'.sup();
-            document.getElementById('naglowek').innerHTML = 'Pole:'
+            document.getElementById('naglowek').innerHTML = 'Pole:';
     } else if (elObjetosc.checked == true) {
                 document.getElementById('wyniki').innerHTML = (Obj * 0.001).toFixed(4) + ' dm' + '3'.sup();
-                document.getElementById('naglowek').innerHTML = 'Objętość:'
+                document.getElementById('naglowek').innerHTML = 'Objętość:';
+            } else {
+                document.getElementById('wyniki').innerHTML = 'Wybierz obliczenie i wprowadź dane!';
+                document.getElementById('naglowek').innerHTML = '';
             };
 
     return wynik;
