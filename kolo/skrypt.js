@@ -8,15 +8,15 @@ function oblicz(r, h){
     var elPoleRadio = document.getElementById('pole');
     var elObjetoscRadio = document.getElementById('objetosc');
 
-
     //Działania
     var Obw = 2 * Math.PI * r;
     var Pol = Math.PI * Math.pow(r, 2);
     var Obj = Pol * h / 3;
 
-    //Wynik
+    //Tablica wyników
     var wynik = [Obw, Pol, Obj];
 
+	//Zmienne do wyświetlania wyników
 	var elWyniki = document.getElementById('wyniki');
 	var elNaglowek = document.getElementById('naglowek');
 
