@@ -24,15 +24,18 @@ function oblicz(r, h){
     if (elObwodRadio.checked == true) {
         elWyniki.innerHTML = Obw.toFixed(4) + ' cm' + '2'.sup();
         elNaglowek.innerHTML = 'Obwód:';
-    } else if (elPoleRadio.checked == true) {
-            elWyniki.innerHTML = Pol.toFixed(4) + ' cm' + '2'.sup();
-            elNaglowek.innerHTML = 'Pole:';
-    } else if (elObjetoscRadio.checked == true) {
-                elWyniki.innerHTML = (Obj * 0.001).toFixed(4) + ' dm' + '3'.sup();
-                elNaglowek.innerHTML = 'Objętość:';
-            } else {
-                elWyniki.innerHTML = 'Wybierz obliczenie i wprowadź dane!';
-                elNaglowek.innerHTML = '';
+    }
+	else if (elPoleRadio.checked == true) {
+        elWyniki.innerHTML = Pol.toFixed(4) + ' cm' + '2'.sup();
+        elNaglowek.innerHTML = 'Pole:';
+    }
+	else if (elObjetoscRadio.checked == true) {
+        elWyniki.innerHTML = (Obj * 0.001).toFixed(4) + ' dm' + '3'.sup();
+        elNaglowek.innerHTML = 'Objętość:';
+            }
+	else {
+         elWyniki.innerHTML = 'Wybierz obliczenie i wprowadź dane!';
+         elNaglowek.innerHTML = '';
             };
 
     return wynik;
