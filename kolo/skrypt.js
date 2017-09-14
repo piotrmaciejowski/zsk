@@ -4,32 +4,39 @@ function oblicz(r, h){
 	var r = document.getElementById('promien').value;
     var h = document.getElementById('wysokosc').value;
 
-    var elObwod = document.getElementById('obwod');
-    var elPole = document.getElementById('pole');
-    var elObjetosc = document.getElementById('objetosc');
+    var elObwodRadio = document.getElementById('obwod');
+    var elPoleRadio = document.getElementById('pole');
+    var elObjetoscRadio = document.getElementById('objetosc');
 
     //Działania
     var Obw = 2 * Math.PI * r;
     var Pol = Math.PI * Math.pow(r, 2);
     var Obj = Pol * h / 3;
 
-    //Wynik
+    //Tablica wyników
     var wynik = [Obw, Pol, Obj];
 
+	//Zmienne do wyświetlania wyników
+	var elWyniki = document.getElementById('wyniki');
+	var elNaglowek = document.getElementById('naglowek');
+
     //Wyświetlanie obliczeń
-    if (elObwod.checked == true) {
-        document.getElementById('wyniki').innerHTML = Obw.toFixed(4) + ' cm' + '2'.sup();
-        document.getElementById('naglowek').innerHTML = 'Obwód:';
-    } else if (elPole.checked == true) {
-        document.getElementById('wyniki').innerHTML = Pol.toFixed(4) + ' cm' + '2'.sup();
-        document.getElementById('naglowek').innerHTML = 'Pole:';
-    } else if (elObjetosc.checked == true) {
-        document.getElementById('wyniki').innerHTML = (Obj * 0.001).toFixed(4) + ' dm' + '3'.sup();
-        document.getElementById('naglowek').innerHTML = 'Objętość:';
-    } else {
-        document.getElementById('wyniki').innerHTML = 'Wybierz obliczenie i wprowadź dane!';
-        document.getElementById('naglowek').innerHTML = '';
-    };
+    if (elObwodRadio.checked == true && r > 0) {
+        elWyniki.innerHTML = Obw.toFixed(4) + ' cm' + '2'.sup();
+        elNaglowek.innerHTML = 'Obwód:';
+    }
+	else if (elPoleRadio.checked == true && r > 0) {
+        elWyniki.innerHTML = Pol.toFixed(4) + ' cm' + '2'.sup();
+        elNaglowek.innerHTML = 'Pole:';
+    }
+	else if (elObjetoscRadio.checked == true && r > 0 && h > 0) {
+        elWyniki.innerHTML = (Obj * 0.001).toFixed(4) + ' dm' + '3'.sup();
+        elNaglowek.innerHTML = 'Objętość:';
+            }
+	else {
+         elWyniki.innerHTML = 'Wybierz obliczenie i wprowadź poprawne dane!';
+         elNaglowek.innerHTML = '';
+            };
 
     return wynik;
 }
