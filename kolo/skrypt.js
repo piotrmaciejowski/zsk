@@ -21,20 +21,20 @@ function oblicz(r, h){
 	var elNaglowek = document.getElementById('naglowek');
 
     //Wyświetlanie obliczeń
-    if (elObwodRadio.checked == true) {
+    if (elObwodRadio.checked == true && r > 0) {
         elWyniki.innerHTML = Obw.toFixed(4) + ' cm' + '2'.sup();
         elNaglowek.innerHTML = 'Obwód:';
     }
-	else if (elPoleRadio.checked == true) {
+	else if (elPoleRadio.checked == true && r > 0) {
         elWyniki.innerHTML = Pol.toFixed(4) + ' cm' + '2'.sup();
         elNaglowek.innerHTML = 'Pole:';
     }
-	else if (elObjetoscRadio.checked == true) {
+	else if (elObjetoscRadio.checked == true && r > 0 && h > 0) {
         elWyniki.innerHTML = (Obj * 0.001).toFixed(4) + ' dm' + '3'.sup();
         elNaglowek.innerHTML = 'Objętość:';
             }
 	else {
-         elWyniki.innerHTML = 'Wybierz obliczenie i wprowadź dane!';
+         elWyniki.innerHTML = 'Wybierz obliczenie i wprowadź poprawne dane!';
          elNaglowek.innerHTML = '';
             };
 
