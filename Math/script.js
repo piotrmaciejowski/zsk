@@ -75,3 +75,13 @@ for (var i = 0; i < 2; i ++){
 var los = Math.floor(Math.random() * 11);
 console.log(los);
 
+var liczba = 3.123455;
+console.log(liczba);
+var nowa = liczba.toFixed(4);
+var prec = liczba.toPrecision(3);
+console.log(nowa);
+console.log(prec);
+
+console.log(typeof(liczba));
+console.log(typeof(nowa));
+console.log(typeof(prec));
