@@ -1,0 +1,24 @@
+#left {
+    background-color: #b79972;
+    float: left;
+}
+
+#right {
+    background-color: burlywood;
+    overflow: hidden;
+}
+
+#left, #right {
+    width: 300px;
+    height: 400px;
+    padding: 20px;
+}
+
+#promien {
+    width: 45px;
+}
+
+.txt {
+    margin-left: 10px;
+    width: 150px;
+}
