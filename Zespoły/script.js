@@ -20,6 +20,7 @@ elCheck.onclick = function() {
         elWynik.innerHTML = '<br>Nie słuchasz tego co ja';
     }
     else if (j == 2) {
-        window.location.href = 'zespoly.html';
+        window.open('https://www.metallica.com/', '',);
+        window.open('http://www.acdc.com/', '',);
     };
 }
