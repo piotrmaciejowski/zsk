@@ -13,6 +13,7 @@ elCheck.onclick = function() {
         j++;
     };
     i++;
+
     console.log(tabZespoly);
     console.log(tabZespoly.length);
 
@@ -20,7 +21,9 @@ elCheck.onclick = function() {
         elWynik.innerHTML = '<br>Nie słuchasz tego co ja';
     }
     else if (j == 2) {
-        window.open('https://www.metallica.com/', '',);
-        window.open('http://www.acdc.com/', '',);
+		/*open('https://www.metallica.com/');
+        open('http://www.acdc.com/');*/
+		open('https://www.google.pl/search?source=hp&q=' + elZespol.value);
     };
+	elZespol.value = '';
 }
