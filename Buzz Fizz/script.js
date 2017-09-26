@@ -1,4 +1,4 @@
-//napisz program, który wyświetla liczby od 1 do 100. Dla liczb podzielnych przez 3 niech program wyświetli Fizz. Dla liczb podzielnych przez 5 program wyświetli Buzz. Dla liczb podzielnych przez 15 Fizz-Buzz
+//napisz program, który wyświetla liczby od 1 do 100. Zamiast liczb podzielnych przez 3 niech program wyświetli Fizz. Zamiast liczb podzielnych przez 5 program wyświetli Buzz. Zamiast liczb podzielnych przez 15 Fizz-Buzz
 
 //******************** Switche ***************************
 
@@ -8,7 +8,7 @@ for (var i = 1; i < 101; i++) {
     
     switch (true) {
 
-        case (i % 3 == 0 && i % 5 == 0):
+        case (i % 15 == 0):
             document.write('Fizz-Buzz<br>');
             break;
 
@@ -33,7 +33,7 @@ document.write('<h1>If-y</h1>');
 
 for (var j = 1; j < 101; j++) {
 
-        if (j % 3 == 0 && j % 5 == 0) {
+        if (j % 15 == 0) {
             document.write('Fizz-Buzz<br>');
         }
 
