@@ -14,13 +14,12 @@ var elPrzycisk = document.getElementById('przycisk');
 var elPopraw = document.getElementById('popraw');
 var elBox = document.getElementById('box');
 
-var regImie = /^[A-z]{2,10}$/;
-var regNazwisko = /^([A-z]+\-|[A-z]){2,20}$/;
-var regLogin = /^(\w|\W){1,20}$/;
-var regMail = /^\w+@[A-z]+.[A-z]{2,3}$/;
-var regPassSpec = /[\W_]/;
-var regPassLitery = /[A-z]/;
-var regPassCyfry = /[0-9]/;
+var regImie = /^[a-ząśćźżółęń]{2,20}$/i;
+var regNazwisko = /^[a-ząśćźżółęń]{2,20}(\-[a-ząśćźżółęń]{2,10})?$/i;
+var regNazwiskoMyslnik = /[-]/;
+var regLogin = /^[a-z0-9]{1}[\w\.\-]{1,20}[a-z0-9]{1}$/i;
+var regMail = /^[a-z][\w\.\-\_]{0,30}@(\w{1,20}\.){1,3}[a-z]{1,3}$/;
+var regPass = /^((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W\_]).{8,35})$/
 
 elBlok.style.color = 'red';
 
@@ -143,9 +142,15 @@ function haslo() {
 }
 
 function blokujHaslo() {
-	if (elPass1.length >= 6) {
+	if (regPass.test(elPass1.value) == true) {
+		elPass1.disabled = true;
 		elPass2.disabled = false;
 		elPass2.focus;
+	}
+	else {
+		elPass1.focus();
+		elPass1.value = '';
+		elBlok.innerHTML = 'Hasło musi być silniejsze!';
 	}
 }
 
@@ -181,6 +186,21 @@ elPopraw.onclick = function() {
 }
 
 elPrzycisk.onclick = function() {
-	document.write(elImie.value + '<br>' + elNazwisko.value  + '<br>' + elMail1.value + '<br>' + elDataur.value);
+	var imie = elImie.value;
+	imie = imie.charAt(0).toUpperCase() + imie.slice(1).toLowerCase();
+	
+	var nazwisko = elNazwisko.value;
+	nazwisko = nazwisko.charAt(0).toUpperCase() + nazwisko.slice(1).toLowerCase();
+	if (regNazwiskoMyslnik.test(nazwisko)) {
+		var myslnik = nazwisko.indexOf('-') + 1;
+		var nazwisko1 = nazwisko.slice(0, myslnik);
+		var nazwisko2 = nazwisko.slice(myslnik, nazwisko.length);
+		nazwisko2 = nazwisko2.charAt(0).toUpperCase() + nazwisko2.slice(1).toLowerCase();
+		nazwisko = nazwisko1 + nazwisko2;
+	};
+	
+
+	
+	document.write(imie + '<br>' + nazwisko  + '<br>' + elMail1.value + '<br>' + elDataur.value);
 }
 
