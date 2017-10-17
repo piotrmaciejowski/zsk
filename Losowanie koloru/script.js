@@ -13,3 +13,13 @@ elBlok.onmouseover = function() {
     elBlok.style.backgroundColor = 'rgb(' + red + ', ' + green + ', ' + blue + ')';
 
 }
+
+var elHaslo = document.getElementById('haslo');
+var elPrzycisk = document.getElementById('przycisk');
+var i = 0;
+
+elPrzycisk.onclick = function() {
+    if (elHaslo.value == 'Wojtek123') {
+        document.write('naisu');
+    }
+}
