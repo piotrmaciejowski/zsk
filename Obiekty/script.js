@@ -88,3 +88,36 @@ var hotelLech = new Hotel('Lech', 40, 15);
 var hotelMerkury = new Hotel('Merkury', 150, 70);
 
 document.write('Wolne pokoje w hotelu Lech: ' + hotelLech.wolnePokoje());
+
+//********************** Tablice w obiekcie
+var suma = 0;
+var gowno = 0;
+
+
+var platnosci = {
+    pokoje: [
+    [50,100],           //pokoj1
+    [150,100],          //pokoj2
+    [50],               //pokoj3
+    [50,100,250]        //pokoj4
+    ],
+    calkowitePlatnosci() {
+        console.log(this.pokoje.length);
+        console.log(this.pokoje[1].length);
+        for (var i = 0; i <= this.pokoje.length; i++){
+            console.log(this.pokoje[1].length);
+            console.log(i);
+            console.log(this.pokoje[i].length);
+/*            for (var j = 0; j < gowno; j++){
+                suma += this.pokoje[i][j];
+            }*/
+        }
+    }
+};
+
+/*console.log(platnosci.pokoj1[1]);
+console.log(platnosci.pokoj1.length);*/
+platnosci.calkowitePlatnosci();
+console.log(suma);
+
+// Zad dom obliczyć całkowitą wartość płatności wszystkich pokoi. Stwórz metodę o nazwie calkowitePlatnosci
