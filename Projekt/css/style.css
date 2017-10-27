@@ -1,7 +1,16 @@
-#czerwony {
-    background-color: red;
+#myAccount, #logOut {
+    display: none;
 }
 
-#zielony {
-    background-color: green;
+.content {
+    margin: 10px;
+    margin-right: 0px;
+    float: left;
+    background-color: aquamarine;
+    width: 300px;
+    height: 300px;
+}
+
+.navbar {
+    margin-bottom: 0px;
 }
