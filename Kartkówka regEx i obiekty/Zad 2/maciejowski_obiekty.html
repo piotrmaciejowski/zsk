@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<style>
+		#blok {
+			color: #066f1a;
+		}
+	</style>
+</head>
+<body>
+	<form>
+		<h1>Wybierz właściwości:</h1>
+		Nazwa <input type="checkbox" name="wybor" id="nazwa"><br>
+		Miejsca <input type="checkbox" name="wybor" id="miejsca"><br>
+		Kondygnacje <input type="checkbox" name="wybor" id="kond"><br>
+		Rodzaj pokoju <input type="checkbox" name="wybor" id="rodzaj"><br>
+		Wynajmowane miejsca <input type="checkbox" name="wybor" id="wynajm"><br>
+	</form>
+	<br>
+	<button id="wyswietl">Wyświetl</button>
+	<br><br>
+	<div id="blok"></div>
+	<script>
+		var radioNazwa = document.getElementById('nazwa');
+		var radioMiejsca = document.getElementById('miejsca');
+		var radioKond = document.getElementById('kond');
+		var radioRodzaj = document.getElementById('rodzaj');
+		var radioWynajm = document.getElementById('wynajm');
+		var elWyswietl = document.getElementById('wyswietl');
+		var elBlok = document.getElementById('blok');
+
+		function pensjonat(nazwa, miejsca, kondygnacje, rodzaj, osoby){
+			this.nazwa = nazwa;
+			this.miejsca = miejsca;
+			this.kondygnacje = kondygnacje;
+			this.rodzaj = rodzaj;
+			this.osoby = osoby;
+			this.wolneMiejsca = function(){
+				return this.miejsca - this.osoby;
+			}
+			this.wyswietl = function(){
+				document.write('Nazwa pensjonatu: ' + this.nazwa);
+				document.write('Ilość miejsc noclegowych: ' + this.miejsca);
+				document.write('Ilość kodygnacji: ' + this.kondygnacje);
+				document.write('Rodzaj pokoju: ' + this.rodzaj);
+				document.write('Ilość osób wynajmujących pokoje: ' + this.osoby);
+
+				document.write('Wolne miejsca noclegowe: ' + this.wolneMiejsca());
+			}
+		}
+
+		var PodLipami = new pensjonat('Pod Lipami', 100, 3, 'dwuosobowy', 43);
+		var nadBrzoza = new pensjonat('Nad Brzozą', 70, 2, 'jednoosobowy', 33);
+
+		PodLipami.kraj = 'Polska';
+		nadBrzoza.kraj = 'Polska';
+
+		elWyswietl.onclick = function(){
+			elBlok.innerHTML = '';
+			if (radioNazwa.checked) {
+				elBlok.innerHTML += 'Nazwa pensjonatu: ' + PodLipami.nazwa + '<br>';
+			}
+			if (radioMiejsca.checked) {
+				elBlok.innerHTML += 'Ilość miejsc noclegowych: ' + PodLipami.miejsca + '<br>';
+			}
+			if (radioKond.checked) {
+				elBlok.innerHTML += 'Ilość kodygnacji w pensjonacie: ' + PodLipami.kondygnacje + '<br>';
+			}
+			if (radioRodzaj.checked) {
+				elBlok.innerHTML += 'Rodzaj pokoju: ' + PodLipami.rodzaj + '<br>';
+			}
+			if (radioWynajm.checked) {
+				elBlok.innerHTML += 'Ilość osób wynajmujących pokoje: ' + PodLipami.osoby + '<br>';
+			}
+		}
+	</script>
+</body>
+</html>

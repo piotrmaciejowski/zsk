@@ -87,6 +87,7 @@ function Hotel(nazwa, pokoje, pokojezarezerwowane){
 var hotelLech = new Hotel('Lech', 40, 15);
 var hotelMerkury = new Hotel('Merkury', 150, 70);
 
+<<<<<<< HEAD
 document.write('Wolne pokoje w hotelu Lech: ' + hotelLech.wolnePokoje());
 
 //********************** Tablice w obiekcie
@@ -121,3 +122,69 @@ platnosci.calkowitePlatnosci();
 console.log(suma);
 
 // Zad dom obliczyć całkowitą wartość płatności wszystkich pokoi. Stwórz metodę o nazwie calkowitePlatnosci
+=======
+//document.write('Wolne pokoje w hotelu Lech: ' + hotelLech.wolnePokoje());
+
+//Pieski
+
+function Pies(imie, rasa, waga, ulubioneZajecia){
+	this.imie = imie;
+	this.rasa = rasa;
+	this.waga = waga;
+	this.ulubioneZajecia = ulubioneZajecia;
+}
+
+var azor = new Pies('Azor', 'bokser', 30, ['spacery', 'szczekanie']);
+var edi = new Pies('Edi', 'bokser', 8, ['bieganie', 'szczekanie']);
+var saba = new Pies('Saba', 'jamnik', 20, ['spacery']);
+var psy = [azor, edi, saba];
+
+/*edi.ulubioneZajecia.push('spanie');
+console.log(edi);
+document.write(edi.ulubioneZajecia);*/
+
+var rozmiar = 'mały pies';
+
+for (var i = 0; i < psy.length; i++){
+	if (psy[i].waga > 10){
+		rozmiar = 'duży pies';
+	}
+	else {
+		rozmiar = 'mały pies';
+	}
+	document.write('Pies: <span style="color:blue;">' + psy[i].imie + '</span> - ' + rozmiar + '<br>');
+}
+
+/*var tab = ['Jan', 'Nowak', 'Poznań'];
+var i;
+for (i in tab){
+	document.write(i + ' - ' + tab[i] + '<br>');
+};*/
+
+/*var i;
+for (i in edi){
+	document.write(i + ' - ' + edi[i] + '<br>');
+};*/
+/*
+var i;
+for (i in edi){
+	if (i == 'imie' || i == 'rasa'){
+		document.write(i + ' - ' + edi[i] + '<br>');
+	}
+};*/
+
+function uczen(imie, nazwisko){
+	this.imie = imie;
+	this.nazwisko = nazwisko;
+};
+
+var robert = new uczen('Robert', 'Lewandowski');
+uczen.prototype.narodowosc = 'Polska';
+uczen.prototype.wyswietlUcznia = function(){
+	return 'Imię: ' + this.imie + '<br>' + 'Nazwisko: ' + this.nazwisko + '<br>' + 'Narodowość: ' + this.narodowosc;
+};
+/*
+document.write(robert.wyswietlUcznia());
+document.write(robert.constructor);
+document.write(robert.constructor.prototype.narodowosc);*/
+>>>>>>> origin/master

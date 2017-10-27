@@ -1,0 +1,16 @@
+#tabela {
+	width: 400px;
+	border: 3px solid black;
+	padding: 10px;
+	text-align: center;
+	}
+
+#tabela td,th {
+	border: 1px dashed black;
+	width: 100px;
+}
+
+#domek {
+	height: 30%;
+	width: 30%;
+}
