@@ -4,6 +4,21 @@
     border-radius: .3rem;
 }
 
+#row-register {
+    margin-top: 2rem;
+}
+
+#register-info {
+    padding: 1rem .5rem;
+    background-color: #4D90FE;
+    color: #fff6eb;
+    border-radius: .3rem;
+}
+
+#register-info p {
+    font-weight: 500;
+}
+
 input {
     border-radius: .3rem;
     margin-bottom: .6rem;
@@ -13,9 +28,13 @@ input {
     margin-bottom: .1rem;
 }
 
-#register button {
+#btn-register {
     margin-top: 2rem;
-    cursor: pointer;
+    cursor: not-allowed;
+}
+
+#chk-tos {
+	cursor: pointer;
 }
 
 form i {
@@ -23,13 +42,13 @@ form i {
     color: #4D90FE;
 }
 
-#error-imie, #error-nazwisko, #error-login, #error-haslo, #error-powtorz {
+#error-imie, #error-nazwisko, #error-login, #error-haslo, #error-powtorz, #error-email {
     display: none;
     visibility: visible;
     color: #e52222;
 }
 
-#good-imie, #good-nazwisko, #good-login, #good-haslo, #good-powtorz {
+#good-imie, #good-nazwisko, #good-login, #good-haslo, #good-powtorz, #good-email {
     display: none;
     visibility: visible;
     color: #1bc442;
@@ -40,4 +59,5 @@ form i {
     width: 15rem;
     padding: 1rem 1.5rem;
     border-radius: .3rem;
+	color: white;
 }

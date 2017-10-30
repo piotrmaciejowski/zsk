@@ -15,7 +15,7 @@
 <body>
     <nav class="navbar navbar-expand-md fixed-top bg-dark navbar-dark">
     <div  class="container">
-      <a class="navbar-brand" href="#">Autentica</a>
+      <a class="navbar-brand" href="../index.html">Autentica</a>
 
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
         <span class="navbar-toggler-icon"></span>
@@ -46,7 +46,17 @@
     </nav>
     <div class="container">
         <div class="row justify-content-center" id="row-register">
-            <div class="col-xs-4 offset-sm-2">
+            <div class="col-sm-2 d-none d-xl-block">
+                <div id="register-info">
+                    <p>Plusy rejestracji:</p>
+                    <ul>
+                        <li>Zniżka 5%</li>
+                        <li>Szybszy kontakt</li>
+                        <li>Opcjonalnie: newsletter</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-xs-4">
                 <div id="register">
                     <h2>Rejestracja</h2>
                     <form>
@@ -82,10 +92,13 @@
                         <br>
                     <p>E-mail</p>
                         <input type="text" id="input-email">
-                        <i id="info-email" class="fa fa-question-circle" aria-hidden="true"></i><br><br>
+                        <i id="info-email" class="fa fa-question-circle" aria-hidden="true"></i>
+						<i id="error-email" class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                        <i id="good-email" class="fa fa-check-circle" aria-hidden="true"></i>
+						<br><br>
                         <div id="tos"><input type="checkbox" id="chk-tos"> Akceptuję <a href="tos.html">regulamin</a></div>
                     </form>
-                    <button id="btn-register">Gotowe </button>
+                    <button id="btn-register" disabled>Gotowe </button>
                 </div>
             </div>
             <div class="col-sm-2 d-none d-sm-block">

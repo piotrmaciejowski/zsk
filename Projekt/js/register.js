@@ -1,11 +1,20 @@
 $(document).ready (function (){
 
+var chkTos = document.getElementById('chk-tos');
+
 var regImie = /^[a-ząśćźżółęń]{2,20}$/i;
 var regNazwisko = /^[a-ząśćźżółęń]{2,20}(\-[a-ząśćźżółęń]{2,10})?$/i;
 var regNazwiskoMyslnik = /[-]/;
 var regLogin = /^[a-z0-9]{1}[\w\.\-]{1,20}[a-z0-9]{1}$/i;
 var regMail = /^[a-z][\w\.\-\_]{0,30}@(\w{1,20}\.){1,3}[a-z]{1,3}$/;
 var regPass = /^((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W\_]).{8,35})$/;
+
+var imieReg;
+var nazwiskoReg;
+var loginReg;
+var mailReg;
+var passReg;
+var passRepeatReg;
 
 //Imię
 
@@ -15,11 +24,13 @@ function imieCheck(){
     if (imieSpr){
         $('#good-imie').css('display', 'inline');
         $('#error-imie').css('display', 'none');
+		imieReg = imieSpr;
     }
     else {
         $('#good-imie').css('display', 'none');
         $('#info-imie').css('display', 'none');
         $('#error-imie').css('display', 'inline');
+		imieReg = imieSpr;
     }
 };
 
@@ -83,11 +94,13 @@ function nazwiskoCheck(){
     if (nazwiskoSpr){
         $('#good-nazwisko').css('display', 'inline');
         $('#error-nazwisko').css('display', 'none');
+		nazwiskoReg = nazwiskoSpr;
     }
     else {
         $('#good-nazwisko').css('display', 'none');
         $('#info-nazwisko').css('display', 'none');
         $('#error-nazwisko').css('display', 'inline');
+		nazwiskoReg = nazwiskoSpr;
     }
 };
 
@@ -151,11 +164,13 @@ function loginCheck(){
     if (loginSpr){
         $('#good-login').css('display', 'inline');
         $('#error-login').css('display', 'none');
+		loginReg = loginSpr;
     }
     else {
         $('#good-login').css('display', 'none');
         $('#info-login').css('display', 'none');
         $('#error-login').css('display', 'inline');
+		loginReg = loginSpr;
     }
 };
 
@@ -221,12 +236,14 @@ function hasloCheck(){
         $('#good-haslo').css('display', 'inline');
         $('#error-haslo').css('display', 'none');
         hasloPowtorz.disabled = false;
+		passReg = hasloSpr;
     }
     else {
         $('#good-haslo').css('display', 'none');
         $('#info-haslo').css('display', 'none');
         $('#error-haslo').css('display', 'inline');
         hasloPowtorz.disabled = true;
+		passReg = hasloSpr;
     }
 };
 
@@ -236,11 +253,13 @@ var powtorzValue = document.getElementById('input-powtorz').value;
     if(hasloValue == powtorzValue){
         $('#good-powtorz').css('display', 'inline');
         $('#error-powtorz').css('display', 'none');
+		passRepeatReg = true;
     }
     else {
         $('#good-powtorz').css('display', 'none');
         $('#info-powtorz').css('display', 'none');
         $('#error-powtorz').css('display', 'inline');
+		passRepeatReg = false;
     }
 }
 
@@ -350,13 +369,85 @@ function(){
 
 //E-mail
 
+function emailCheck(){
+    var emailValue = document.getElementById('input-email').value;
+	var emailSpr = regMail.test(emailValue);
+    if (emailSpr){
+        $('#good-email').css('display', 'inline');
+        $('#error-email').css('display', 'none');
+		mailReg = emailSpr;
+    }
+    else {
+        $('#good-email').css('display', 'none');
+        $('#info-email').css('display', 'none');
+        $('#error-email').css('display', 'inline');
+		mailReg = emailSpr;
+    }
+};
+
 $('#input-email').focusin(function(){
 		$('#info-email').css('visibility', 'visible');
 	});
+
+$('#input-email').keyup(function(){
+    var emailValue = document.getElementById('input-email').value;
+    if(emailValue != ''){
+        emailCheck();
+    };
+});
+
+$('#input-email').blur(function(){
+    emailCheck();
+});
 
 $('#input-email').focusout(function(){
 		$('#info-email').css('visibility', 'hidden');
 	});
 
+$('#info-email').hover(
+function(){
+    $('#help').css('background-color', '#4d9ffe');
+    $('#help h5').text('Poprawny email musi zawierać @ i domenę.');
+    $('#help').show(1000);
+},
+function(){
+    $('#help').hide(500);
+    $('#help h5').text('');
+});
+
+$('#error-email').hover(
+function(){
+    $('#help').css('background-color', '#e52222');
+    $('#help h5').text('Wprowadź poprawny e-mail!');
+    $('#help').show(1000);
+},
+function(){
+    $('#help').hide(500);
+    $('#help h5').text('');
+});
+
+$('#good-email').hover(
+function(){
+    $('#help').css('background-color', '#1bc442');
+    $('#help h5').text('E-mail poprawny!');
+    $('#help').show(1000);
+},
+function(){
+    $('#help').hide(500);
+    $('#help h5').text('');
+});
+
+function unlock(){
+	if(chkTos.checked & imieReg & nazwiskoReg & loginReg & mailReg & passReg & passRepeatReg){
+		$('#btn-register').attr('disabled', false);
+		$('#btn-register').css('cursor', 'pointer');
+	}
+	else {
+        $('#btn-register').attr("disabled", true);
+        $('#btn-register').css('cursor', 'not-allowed');
+	}
+};
+
+chkTos.addEventListener('change', unlock);
 
 });
