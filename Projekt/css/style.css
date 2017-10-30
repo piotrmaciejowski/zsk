@@ -6,3 +6,21 @@ body > .container {
     padding: 60px 15px 0;
 }
 
+#left {
+    padding: 0;
+}
+
+#left-menu {
+    padding: 0.5rem 1rem;
+    background-color: #d8ddde;
+    border-radius: .3rem;
+}
+
+#right {
+    margin-bottom: 1rem;
+}
+
+#row-register {
+    margin-top: 3.5rem;
+}
+

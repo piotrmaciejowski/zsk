@@ -1,0 +1,43 @@
+#register {
+    padding: 2rem 3rem;
+    background-color: #d8ddde;
+    border-radius: .3rem;
+}
+
+input {
+    border-radius: .3rem;
+    margin-bottom: .6rem;
+}
+
+#register p {
+    margin-bottom: .1rem;
+}
+
+#register button {
+    margin-top: 2rem;
+    cursor: pointer;
+}
+
+form i {
+    visibility: hidden;
+    color: #4D90FE;
+}
+
+#error-imie, #error-nazwisko, #error-login, #error-haslo, #error-powtorz {
+    display: none;
+    visibility: visible;
+    color: #e52222;
+}
+
+#good-imie, #good-nazwisko, #good-login, #good-haslo, #good-powtorz {
+    display: none;
+    visibility: visible;
+    color: #1bc442;
+}
+
+#help {
+    display: none;
+    width: 15rem;
+    padding: 1rem 1.5rem;
+    border-radius: .3rem;
+}
