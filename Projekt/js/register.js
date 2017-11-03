@@ -449,5 +449,10 @@ function unlock(){
 };
 
 chkTos.addEventListener('change', unlock);
+    
+$('#btn-register').click(function(){
+    $('#register-ready').css('display', 'none');
+    $('#register-loading').css('display', 'inline-block');
+});
 
 });

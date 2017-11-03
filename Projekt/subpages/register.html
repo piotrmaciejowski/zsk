@@ -37,7 +37,7 @@
             <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown" href="#"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Moje konto</a>
             <div class="dropdown-menu">
-                <a id="nav-Login" class="dropdown-item" href="#">Login</a>
+                <a id="nav-Login" class="dropdown-item" href="login.html">Login</a>
             </div>
             </li>
         </ul>
@@ -98,7 +98,9 @@
 						<br><br>
                         <div id="tos"><input type="checkbox" id="chk-tos"> Akceptuję <a href="tos.html">regulamin</a></div>
                     </form>
-                    <button id="btn-register" disabled>Gotowe </button>
+                    <div class="d-flex justify-content-center">
+                        <button id="btn-register" disabled>Gotowe <i id="register-ready" class="fa fa-check" aria-hidden="true"></i><i id="register-loading" class="fa fa-refresh fa-spin fa-fw" aria-hidden="true"></i></button>
+                    </div>
                 </div>
             </div>
             <div class="col-sm-2 d-none d-sm-block">

@@ -1,0 +1,43 @@
+#login {
+    padding: 2rem 2rem;
+    border: solid .05rem #969696;
+    border-radius: .5rem;
+    min-width: 144px;
+}
+
+#row-login {
+    margin-top: 1rem;
+}
+
+#login button {
+    margin-top: 1.5rem;
+    width: 100%;
+}
+
+#login input {
+    width: 100%;
+}
+
+#login p {
+    margin-top: .3rem;
+    margin-bottom: .1rem;
+}
+
+#login h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+#pass-forgot {
+    text-align: right;
+}
+
+#container-help {
+    padding-top: 30px;
+}
+
+.list {
+    list-style: none;
+    padding: 0;
+}
+

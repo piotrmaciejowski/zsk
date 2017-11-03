@@ -20,3 +20,7 @@ body > .container {
     margin-bottom: 1rem;
 }
 
+#login-loading, #register-loading {
+    display: none;
+}
+

@@ -9,7 +9,7 @@
     <script src="../js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/tos.css">
+    <link rel="stylesheet" href="../css/login.css">
 </head>
 
 <body>
@@ -37,7 +37,7 @@
             <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown" href="#"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Moje konto</a>
             <div class="dropdown-menu">
-                <a id="nav-Login" class="dropdown-item" href="#">Login</a>
+                <a id="nav-Login" class="dropdown-item" href="login.html">Login</a>
             </div>
             </li>
         </ul>
@@ -45,23 +45,31 @@
     </div>
     </nav>
     <div class="container">
-        <h1>Regulamin <i class="fa fa-handshake-o" aria-hidden="true"></i></h1>
-        <div class="row" id="row-tos">
-            <div class="col-lg-9">
-                <div id="main-tos">
-                Donec sagittis venenatis lorem, ac finibus augue aliquam eget. Etiam mi est, posuere id fermentum quis, ornare et nibh. Vestibulum ut rutrum felis. Ut a mattis purus, ac vehicula massa. Pellentesque ac vulputate dolor, at suscipit purus. Donec erat est, laoreet non posuere at, faucibus in mi. Suspendisse sed tortor sed mi semper gravida in vitae nisi. Sed laoreet lorem ac viverra lacinia. Duis et vestibulum mi, id pharetra risus.
-
-                Nulla mattis augue sed gravida aliquet. Proin elementum, libero tincidunt condimentum semper, eros libero sagittis neque, ac hendrerit tellus tellus eu nulla. Curabitur vel iaculis felis. Suspendisse sodales dictum dui, ac elementum turpis maximus sit amet. Cras quis tempus justo. Aliquam at iaculis felis. Ut non blandit turpis. Pellentesque rhoncus nisi leo. Curabitur nec leo non nisl mattis egestas.
-                </div>
-            </div>
-            <div class="col-lg-3 d-none d-lg-block">
-                <div id="right-tos">
-                    Pamiętaj, aby uważnie przeczytać ten regulamin przed rejestracją! Jeśli potrzebujesz pomocy skontaktuj się z nami. 
-                    <a href="help.html"><i class="fa fa-info-circle" aria-hidden="true"></i></a>
+        <div class="row justify-content-center" id="row-login">
+            <div class="col-sm-6">
+                <div id="login">
+                    <h2>Logowanie</h2>
+                    <form>
+                    <p>Login</p>
+                        <input type="text" id="input-login">
+                    <p>Hasło</p>
+                        <input type="password" id="input-haslo">
+                    </form>
+                    <p id="pass-forgot"><a href="#">Zapomniałeś hasło?</a></p>
+                    <button id="btn-login" disabled>Gotowe <i id="login-ready" class="fa fa-check" aria-hidden="true"></i><i id="login-loading" class="fa fa-refresh fa-spin fa-fw" aria-hidden="true"></i></button>
                 </div>
             </div>
         </div>
     </div>
-    <script src="../js/tos.js"></script>
+    <div class="container" id="container-help">
+        <div class="d-flex justify-content-center">
+            <ul class="list d-flex flex-justify-center">
+                <li class="mr-3"><a href="tos.html">ToS</a></li>
+                <li class="mr-3"><a href="#">Pomoc</a></li>
+                <li><a href="#">FaQ</a></li>
+            </ul>
+        </div>
+  </div>
+    <script src="../js/login.js"></script>
 </body>
 </html>
